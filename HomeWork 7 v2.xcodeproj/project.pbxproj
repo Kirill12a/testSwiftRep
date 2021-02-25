@@ -13,7 +13,23 @@
 		D2D439FA25D8794200EBEDDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2D439F825D8794200EBEDDD /* Main.storyboard */; };
 		D2D439FC25D8794500EBEDDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2D439FB25D8794500EBEDDD /* Assets.xcassets */; };
 		D2D439FF25D8794500EBEDDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2D439FD25D8794500EBEDDD /* LaunchScreen.storyboard */; };
+		D2FACF2A25D8834200BEDED2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2FACF2925D8834200BEDED2 /* Alamofire.framework */; };
+		D2FACF2B25D8834200BEDED2 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D2FACF2925D8834200BEDED2 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D2FACF2C25D8834200BEDED2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D2FACF2B25D8834200BEDED2 /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D2D439EF25D8794200EBEDDD /* HomeWork 7 v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HomeWork 7 v2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +40,7 @@
 		D2D439FB25D8794500EBEDDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2D439FE25D8794500EBEDDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2D43A0025D8794500EBEDDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2FACF2925D8834200BEDED2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2FACF2A25D8834200BEDED2 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +60,7 @@
 			children = (
 				D2D439F125D8794200EBEDDD /* HomeWork 7 v2 */,
 				D2D439F025D8794200EBEDDD /* Products */,
+				D2FACF2825D8834200BEDED2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +86,14 @@
 			path = "HomeWork 7 v2";
 			sourceTree = "<group>";
 		};
+		D2FACF2825D8834200BEDED2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D2FACF2925D8834200BEDED2 /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,6 +104,8 @@
 				D2D439EB25D8794200EBEDDD /* Sources */,
 				D2D439EC25D8794200EBEDDD /* Frameworks */,
 				D2D439ED25D8794200EBEDDD /* Resources */,
+				D2FACF2C25D8834200BEDED2 /* Embed Frameworks */,
+				D2FACF2D25D8835400BEDED2 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -131,6 +160,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D2FACF2D25D8835400BEDED2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D2D439EB25D8794200EBEDDD /* Sources */ = {
@@ -288,6 +338,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UJ8B9FFXUA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "HomeWork 7 v2/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -307,6 +361,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UJ8B9FFXUA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "HomeWork 7 v2/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

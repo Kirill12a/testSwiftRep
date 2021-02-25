@@ -17,7 +17,7 @@ class ViewController: UIViewController {
 
 ///Code 2
         
-        //fds/g/
+        //fds/g/э это будет другое другое
         ///dfsg//
         
         ///sdgsdfgd
